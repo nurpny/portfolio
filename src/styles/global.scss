@@ -18,9 +18,9 @@ body {
   box-sizing: border-box;
   --primary-color: #292929;
   --secondary-color: #10072b;
+  --grey: #73757e;
   --white: #fff;
   --primary-bd: #d3d6e7;
-  --btn-text-color: #868892;
   --shadow-color: #d5d5d5;
   --form-bg: #ccccc8
 }
@@ -151,7 +151,11 @@ a {
     grid-template-areas:
       "title date"
       "description description"
+      "technologies technologies"
       ". github"
+  }
+  .project-date {
+    align-self: center;
   }
   .project-title {
     font-size: 1.2rem;
@@ -160,9 +164,15 @@ a {
   .project-meta {
     font-size: 0.8rem;
     color: var(--text-secondary-color);
+    vertical-align: bottom;
   }
   .description {
     grid-area: description;
+    color: var(--grey);
+    margin-bottom: 0.2rem;
+  }
+  .technologies {
+    grid-area: technologies;
   }
   .github {
     grid-area: github;

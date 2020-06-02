@@ -16,6 +16,7 @@ export const Projects = () => {
             url
             github
             title
+            description
             thumbnail
             technologies
           }
