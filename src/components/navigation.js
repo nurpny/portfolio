@@ -1,11 +1,18 @@
 import React from "react"
-import {Link} from "gatsby"
-import ThemeChanger from "../components/themeChanger"
+import { Link } from "gatsby"
 
-export default (props) => (
-  <nav className="navigation"> 
-    <Link to="/contact">Contact</Link>
-    <ThemeChanger/>
+export default (props) => {
+  const { moveTo, pages } = props;
+  return (
+      <nav
+    className="navigation"
+    style={{
+      zIndex: 100,
+    }}>
+    {pages.map((page, idx) =>
+      <div key={idx} onClick={() => moveTo(idx + 1)}>{page}</div>
+    )}
   </nav>
-  
-)
+  )
+}
+

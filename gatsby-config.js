@@ -8,6 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: require("./site-meta-data.json"),
   plugins: [
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,15 +49,14 @@ module.exports = {
         short_name: `Delog`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#381696`,
+        theme_color: `#050505`,
         display: `standalone`,
         icon: "src/images/icon.png",
       },
     },
-    `gatsby-plugin-sass`, 
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-dark-mode',
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
