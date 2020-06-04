@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-height: 850px) {
     font-size: 10px;
   }
 }
@@ -12,17 +12,22 @@ body {
 }
 
 body {
-  font-family: Libre Baskerville, serif;
+  font-family: Open Sans, serif;
   background-color: var(--white);
   color: var(--text-color);
   box-sizing: border-box;
+  background-image: url("../images/macbook_bg.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   --primary-color: #292929;
   --secondary-color: #10072b;
   --grey: #73757e;
   --white: #fff;
   --primary-bd: #d3d6e7;
   --shadow-color: #d5d5d5;
-  --form-bg: #ccccc8
+  --form-bg: #ccccc8;
 }
 
 a {
@@ -35,7 +40,7 @@ a {
 
 .section-container {
   padding-top: 5vh;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-height: 850px) {
     padding-top: 2vh;
   }
 }
@@ -49,19 +54,17 @@ a {
     font-size: 30px;
     text-transform: uppercase;
   }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-height: 850px) {
     padding: 4vh 6vh 3vh 3vh;
     h2 {
       font-size: 16px;
     }
-
   }
 }
 
 .section-text {
-  background-color: var(--white);;
+  background-color: var(--white);
 }
-
 
 .navigation {
   display: flex;
@@ -78,7 +81,7 @@ a {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-decoration: underline;
-    margin-left: 1px;
+    margin-left: 1rem;
     margin-top: 15px;
     color: var(--white);
     &:hover {
@@ -88,54 +91,54 @@ a {
       margin-right: 20px;
     }
   }
-  @media only screen and (max-height: 700px) {
+  @media only screen and (orientation: landscape) {
     justify-content: space-evenly;
+    margin-top: 1vh;
     left: 4vh;
     div {
       transform: initial;
       writing-mode: initial;
-
     }
   }
-
 }
-
 
 .headline {
   font-family: Bebas Neue, sans-serif;
   font-size: 80px;
   text-transform: uppercase;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-height: 850px) {
     font-size: 40px;
   }
 }
-
-
 
 .grids {
   display: flex;
   flex-wrap: wrap;
   margin-top: 2%;
+  @media screen and (orientation: portrait) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .card {
   margin: 1%;
-  width: 400px;
   display: flex;
   flex-direction: column;
+  flex: 1 1;
   align-items: center;
   padding: 2%;
   border-radius: 9px;
   box-shadow: 0 0 30px var(--shadow-color);
   overflow: hidden;
   line-height: 1.2;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-height: 850px) {
     width: 200px;
   }
   > a {
     width: 300px;
     height: 200px;
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-height: 850px) {
       width: 100px;
       height: 50px;
     }
@@ -152,7 +155,7 @@ a {
       "title date"
       "description description"
       "technologies technologies"
-      ". github"
+      ". github";
   }
   .project-date {
     align-self: center;
@@ -179,67 +182,113 @@ a {
   }
 }
 
-
 .site-footer {
   text-align: center;
   position: fixed;
   width: 100%;
-  bottom: 5px;
-  img{
+  bottom: 0px;
+  img {
     width: 30px;
-    margin: 0px 20px 5px;
+    margin: 10px 20px 10px;
+  }
+}
+
+h3 {
+  font-family: Oswald, sans-serif;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+  border-top: 1px solid var(--grey);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tech-img {
+  max-height: 7vmin;
+  margin: 0 2vw 1vw;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.phone-image {
+  text-align: center;
+  min-height: 380px;
+  background-image: url("../../static/assets/alexander-andrews-HgUDpaGPTEA-unsplash.jpg");
+  background-color: var(--featured-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  color: var(--featured-text);
+  position: relative;
+  padding: 20px;
+  grid-area: phoneimage;
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "header header"
+    "phoneimage contactform";
+  grid-column-gap: 2rem;
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "contactform";
+  }
+  h2 {
+    grid-area: header;
   }
 }
 
 .form-container {
+  grid-area: contactform;
   background-color: var(--form-bg);
   padding: 3% 3% 1.5% 3%;
   border: 1px solid var(--primary-bdr);
-  border-radius: 9px;
+  border-radius: 18px;
   font-size: 0.9em;
   color: var(--secondary-color);
   box-shadow: 0 0 30px var(--shadow-color);
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-gap: 0.5rem 0.5rem;
+  align-items: end;
+
   label {
-    margin-bottom: 0.2rem;
     display: inline-block;
-    width: 20%;
   }
+
   input[type="text"],
   input[type="email"],
   textarea {
     appearance: none;
     border: 1px solid var(--shadow-color);
     border-radius: 6px;
-    padding: 3px 4px;
-    width: calc(100% - 24px);
-    margin-bottom: 1.0rem;
     background-color: var(--white);
-    font-family: Arial, sans-serif;
-  }
-  input[type="text"],
-  input[type="email"] {
-    width: 77%
+    font-family: Open Sans, sans-serif;
   }
   textarea {
     height: 10em;
+    grid-column: span 2;
+    align-self: start;
   }
-}
-
-.button {
-  padding: 0.4% 1.0%;
-  display: inline-block;
-  border: 1px solid var(--primary-bdr);
-  border-radius: 7px;
-  margin-right: 1.5rem;
-  transition: background-color 0.3s linear;
-  &.-primary {
+  .submit-button {
+    padding: 0.4% 1%;
+    display: inline-block;
+    border-radius: 7px;
+    grid-column: span 2;
     background-color: var(--primary-color);
-    border-color: var(--primary-color);
     color: var(--white);
+    justify-self: end;
+    align-self: start;
   }
 }
-
-
-
-
-

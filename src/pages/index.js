@@ -10,7 +10,6 @@ import Navigation from "../components/navigation"
 import Footer from "../components/footer"
 import ReactFullpage from '@fullpage/react-fullpage'
 
-
 const SEL = 'section-container';
 const SECTION_SEL = `.${SEL}`;
 
@@ -21,12 +20,13 @@ const pluginWrapper = () => {
   */
 };
 
+// sectionsColor: ['#292929', '#43D398', '#EEB044', '#0F2C90',  '#9C9C9B'],
+
 
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sectionsColor: ['#292929', '#43D398', '#EEB044', '#0F2C90',  '#9C9C9B'],
       pages: ["main", "about", "technologies", "projects", "contact"]
     };
   }
@@ -43,7 +43,7 @@ class IndexPage extends React.Component {
     return (
       <div className="App">
         <Helmet>
-          <link href='https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald&family=BenchNine&family=Abel&family=Bebas+Neue' rel='stylesheet' />
+          <link href='https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald&family=BenchNine&family=Abel&family=Bebas+Neue&family=Open+Sans' rel='stylesheet' />
           <title>{this.props.data.site.siteMetadata.title}</title>
           <meta name="description" content={this.props.data.site.siteMetadata.description} />
         </Helmet>
@@ -57,7 +57,7 @@ class IndexPage extends React.Component {
           navigation
           anchors={[...this.state.pages]}
           sectionSelector={SECTION_SEL}
-          sectionsColor={this.state.sectionsColor}
+          // sectionsColor={this.state.sectionsColor}
 
           render={comp => (
             <ReactFullpage.Wrapper>
