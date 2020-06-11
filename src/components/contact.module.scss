@@ -1,0 +1,81 @@
+.phone-image {
+  text-align: center;
+  min-height: 380px;
+  background-image: url("../../static/assets/alexander-andrews-HgUDpaGPTEA-unsplash.jpg");
+  background-color: var(--featured-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  color: var(--featured-text);
+  position: relative;
+  padding: 20px;
+  grid-area: phoneimage;
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "header header"
+    "phoneimage contactform";
+  grid-column-gap: 4%;
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "contactform";
+  }
+  h2 {
+    grid-area: header;
+  }
+}
+
+
+.form-container {
+  grid-area: contactform;
+  background-color: var(--form-bg);
+  padding: 3% 3% 1.5% 3%;
+  border: 1px solid var(--primary-bdr);
+  border-radius: 18px;
+  font-size: 0.9em;
+  color: var(--secondary-color);
+  box-shadow: 0 0 30px var(--shadow-color);
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-gap: 0.5rem 0.5rem;
+  align-items: end;
+
+  label {
+    display: inline-block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    appearance: none;
+    border: 1px solid var(--shadow-color);
+    border-radius: 6px;
+    background-color: var(--white);
+    font-family: Open Sans, sans-serif;
+  }
+  textarea {
+    height: 10em;
+    grid-column: span 2;
+    align-self: start;
+  }
+  .submit-button {
+    padding: 0.4% 1%;
+    display: inline-block;
+    border-radius: 7px;
+    grid-column: span 2;
+    background-color: var(--primary-color);
+    color: var(--white);
+    justify-self: end;
+    align-self: start;
+
+  }
+}

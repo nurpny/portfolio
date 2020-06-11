@@ -1,22 +1,21 @@
 import React from "react"
-
+import mystyle from './project-link.module.scss'
 
 const ProjectLink = ({ post: project }) => (
-  <article className="card">
+  <article className={mystyle.card}>
     <a href={project.frontmatter.url}>
       {!!project.frontmatter.thumbnail && (
         <img src={project.frontmatter.thumbnail} alt={project.frontmatter.title + "- Featured Shot"} />
       )}
     </a>
-    <div className="card-details">
-      <h3 className="project-title">
+    <div className={mystyle.cardDetails}>
+      <h3 className={mystyle.projectTitle}>
           {project.frontmatter.title}
       </h3>
-      <div className="project-meta project-date">{project.frontmatter.date}</div>
-      <div className="project-meta description"> {project.frontmatter.description}</div>
-      <div className="project-meta technologies">Made with: {project.frontmatter.technologies}</div>
-
-      <div className="project-meta github"><a href={project.frontmatter.github}>Github</a></div>
+      <div className={[mystyle.projectMeta, mystyle.projectDate].join(' ')}>{project.frontmatter.date}</div>
+      <div className={[mystyle.projectMeta, mystyle.description].join(' ')}> {project.frontmatter.description}</div>
+      <div className={[mystyle.projectMeta, mystyle.technologies].join(' ')}>Made with: {project.frontmatter.technologies}</div>
+      <div className={[mystyle.projectMeta, mystyle.github].join(' ')}><a href={project.frontmatter.github}>Github</a></div>
 
 
     </div>

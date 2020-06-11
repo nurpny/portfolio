@@ -1,19 +1,19 @@
 import React from "react"
-import Helmet from "react-helmet"
-import { graphql } from 'gatsby'
+import mystyles from './contact.module.scss'
+
 
 
 const ContactPage = () => {
+
   return (
 
-    <div className="section-text-container contact-section">
+    <div className= {["section-text-container", mystyles.contactSection ].join(' ')}>
 
       <h2 className>Get in Touch</h2>
 
+      <div className={mystyles.phoneImage}> </div>
 
-      <div className="phone-image">        Let me help you kick start your next project </div>
-
-      <form className="form-container" action="https://sendmail.w3layouts.com/SubmitContactForm" method="post" required>
+      <form className={mystyles.formContainer} action="https://sendmail.w3layouts.com/SubmitContactForm" method="post" required>
 
           <label htmlFor="w3lName">Name</label>
           <input type="text" name="w3lName" id="w3lName" required />
@@ -28,7 +28,7 @@ const ContactPage = () => {
           <textarea name="w3lMessage" id="w3lMessage" required></textarea>
 
 
-          <input type="submit" className="submit-button" />
+          <input type="submit" className={mystyles.submitButton} />
 
       </form>
 

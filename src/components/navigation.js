@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+
 
 export default (props) => {
   const { moveTo, pages } = props;
