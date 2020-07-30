@@ -43,7 +43,7 @@ class IndexPage extends React.Component {
     return (
       <div className="App">
         <Helmet>
-          <link href='https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald&family=BenchNine&family=Abel&family=Bebas+Neue&family=Open+Sans' rel='stylesheet' />
+          <link href='https://fonts.googleapis.com/css2?family=Oswald&family=Bebas+Neue&family=Open+Sans&display=swap' rel='stylesheet' />
           <title>{this.props.data.site.siteMetadata.title}</title>
           <meta name="description" content={this.props.data.site.siteMetadata.description} />
         </Helmet>
